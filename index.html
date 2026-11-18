@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R-ARYAN | Premium Music</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #050510;
+    --card: #111126;
+    --blue: #168cff;
+    --cyan: #00e5ff;
+    --purple: #713cff;
+    --silver: #e5eaff;
+    --text: #ffffff;
+    --muted: #a7acc5;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+/* REGISTRATION PAGE */
+
+#registerPage {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background:
+      radial-gradient(circle at top, #18235c, transparent 55%),
+      #050510;
+}
+
+.register {
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+    text-align: center;
+    background: rgba(15, 15, 40, 0.95);
+    border: 1px solid var(--blue);
+    border-radius: 20px;
+    box-shadow: 0 0 35px #075dba55;
+}
+
+.dp {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--cyan);
+    box-shadow: 0 0 25px var(--blue);
+    margin-bottom: 18px;
+}
+
+.register h1 {
+    color: var(--silver);
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.register h2 {
+    color: var(--cyan);
+    margin: 15px 0;
+}
+
+.register p {
+    color: var(--muted);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.register input {
+    width: 100%;
+    padding: 14px;
+    margin: 9px 0;
+    border: 1px solid #343d75;
+    border-radius: 9px;
+    background: #08091b;
+    color: white;
+    outline: none;
+}
+
+.register input:focus {
+    border-color: var(--cyan);
+}
+
+button {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register button,
+.primary-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background: linear-gradient(90deg, #176eff, #713cff);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.register button:hover,
+.primary-btn:hover {
+    box-shadow: 0 0 20px var(--blue);
+    transform: scale(1.02);
+}
+
+/* WEBSITE */
+
+#website {
+    display: none;
+}
+
+header {
+    background: #0b0b20;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #263b75;
+    box-shadow: 0 3px 20px #005dff22;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--cyan);
+    box-shadow: 0 0 12px var(--blue);
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--cyan);
+}
+
+/* LAYOUT */
+
+.container {
+    display: flex;
+    min-height: 90vh;
+}
+
+.sidebar {
+    width: 220px;
+    background: #0b0b20;
+    padding: 25px 18px;
+    flex-shrink: 0;
+    border-right: 1px solid #202b55;
+}
+
+.sidebar h3 {
+    color: var(--cyan);
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: #b8bdd5;
+    text-decoration: none;
+    padding: 15px 5px;
+}
+
+.sidebar a:hover {
+    color: var(--cyan);
+    padding-left: 12px;
+}
+
+/* MAIN */
+
+main {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+    background:
+      radial-gradient(ellipse at top, #151b4d, transparent 60%),
+      #080817;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 20px;
+    border-radius: 18px;
+    background: linear-gradient(120deg, #101c48, #17112e);
+    border: 1px solid #254b9b;
+    margin-bottom: 25px;
+}
+
+.hero img {
+    width: 115px;
+    height: 115px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--cyan);
+    box-shadow: 0 0 25px var(--blue);
+}
+
+.hero h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: var(--silver);
+}
+
+p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* SEARCH */
+
+.search {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 25px;
+    border: 1px solid #344d91;
+    outline: none;
+    background: #101027;
+    color: white;
+}
+
+/* CATEGORIES */
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.categories button {
+    padding: 12px 23px;
+    border: 1px solid #343d75;
+    border-radius: 25px;
+    background: #17172e;
+    color: white;
+}
+
+.categories button.active,
+.categories button:hover {
+    background: linear-gradient(90deg, #176eff, #713cff);
+    border-color: var(--cyan);
+}
+
+/* SONGS */
+
+h2 {
+    margin: 25px 0 20px;
+    color: var(--silver);
+}
+
+.song-grid {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.song-card {
+    background: var(--card);
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #202b55;
+    transition: 0.3s;
+    min-width: 0;
+}
+
+.song-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cyan);
+    box-shadow: 0 0 18px #075dba44;
+}
+
+.song-cover {
+    height: 145px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #075dba, #32146b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.song-card h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+    overflow-wrap: anywhere;
+}
+
+.song-card p {
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.song-card audio {
+    width: 100%;
+    height: 35px;
+}
+
+.empty {
+    color: var(--muted);
+}
+
+/* UPLOAD */
+
+.upload-section {
+    background: #111126;
+    padding: 22px;
+    margin-top: 35px;
+    border-radius: 15px;
+    border: 1px solid var(--blue);
+}
+
+.upload-section input,
+.upload-section select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background: #080817;
+    color: white;
+    border: 1px solid #344d91;
+    border-radius: 8px;
+}
+
+.upload-section button {
+    margin-top: 15px;
+    padding: 13px 22px;
+    background: linear-gradient(90deg, #176eff, #713cff);
+    color: white;
+    border: none;
+    border-radius: 25px;
+}
+
+/* USER PROFILE */
+
+.profile {
+    margin-top: 25px;
+    padding: 18px;
+    background: #111126;
+    border: 1px solid #344d91;
+    border-radius: 12px;
+}
+
+.profile p {
+    margin: 6px 0;
+}
+
+/* FOOTER */
+
+footer {
+    background: #0b0b20;
+    padding: 25px;
+    text-align: center;
+    color: #9299b9;
+    border-top: 1px solid #263b75;
+}
+
+/* MOBILE */
+
+@media(max-width:650px) {
+    header {
+        padding: 12px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .logo img {
+        width: 43px;
+        height: 43px;
+    }
+
+    nav a {
+        font-size: 11px;
+        margin-left: 5px;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding: 12px;
+    }
+
+    .sidebar h3 {
+        display: none;
+    }
+
+    .sidebar a {
+        white-space: nowrap;
+    }
+
+    main {
+        padding: 18px 13px;
+    }
+
+    .hero {
+        padding: 13px;
+        gap: 13px;
+    }
+
+    .hero img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .hero h1 {
+        font-size: 21px;
+    }
+
+    .song-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .song-cover {
+        height: 115px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- REGISTRATION PAGE -->
+
+<section id="registerPage">
+
+<div class="register">
+
+<img src="r-aryan-dp.png" class="dp" alt="R-ARYAN Logo">
+
+<h1>R-ARYAN</h1>
+<h2>👑 Welcome to the Music World</h2>
+
+<p>Register to enter the R-ARYAN Premium Music Experience.</p>
+
+<form id="registerForm">
+
+<input type="text"
+id="name"
+placeholder="Enter Your Name"
+required>
+
+<input type="email"
+id="email"
+placeholder="Enter Your Email"
+required>
+
+<input type="tel"
+id="phone"
+placeholder="Enter Phone Number (Optional)">
+
+<button type="submit">
+REGISTER & ENTER
+</button>
+
+</form>
+
+<p style="margin-top:20px;font-size:12px">
+Your Music. Your Mood. Your World. 🎧
+</p>
+
+</div>
+</section>
+
+<!-- MAIN WEBSITE -->
+
+<div id="website">
+
+<header>
+
+<div class="logo">
+<img src="r-aryan-dp.png" alt="R-ARYAN">
+R<span>-</span>ARYAN
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#music">Music</a>
+<a href="#upload">Upload</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<aside class="sidebar">
+
+<h3>YOUR MUSIC</h3>
+
+<a href="#home">🏠 Home</a>
+<a href="#music">🎵 All Songs</a>
+<a href="#upload">⬆ Upload Songs</a>
+<a href="#profile">👤 My Profile</a>
+
+</aside>
+
+<main id="home">
+
+<div class="hero">
+
+<img src="r-aryan-dp.png" alt="R-ARYAN DP">
+
+<div>
+<h1>R-ARYAN MUSIC</h1>
+<p>Your Music. Your Mood. Your World. 🎧</p>
+<p>Welcome to the R-ARYAN Music Family!</p>
+</div>
+
+</div>
+
+<input
+type="search"
+class="search"
+id="search"
+placeholder="🔍 Search your favourite songs...">
+
+<div class="categories">
+
+<button class="active" data-filter="All">All</button>
+<button data-filter="Tamil">Tamil</button>
+<button data-filter="Hindi">Hindi</button>
+<button data-filter="English">English</button>
+
+</div>
+
+<section id="music">
+
+<h2>🔥 Your Music Library</h2>
+
+<div class="song-grid" id="songList">
+<p class="empty">Upload your favourite songs to start listening!</p>
+</div>
+
+</section>
+
+<section class="upload-section" id="upload">
+
+<h2>⬆ Upload Your Songs</h2>
+
+<p>Select downloaded audio files from your device.</p>
+
+<input type="file"
+id="songFile"
+accept="audio/*"
+multiple>
+
+<select id="songLanguage">
+<option value="Tamil">Tamil</option>
+<option value="Hindi">Hindi</option>
+<option value="English">English</option>
+</select>
+
+<button onclick="uploadSongs()">
+ADD SONGS TO LIBRARY
+</button>
+
+</section>
+
+<section class="profile" id="profile">
+
+<h2>👑 My Profile</h2>
+
+<p>Name: <span id="profileName"></span></p>
+<p>Email: <span id="profileEmail"></span></p>
+
+</section>
+
+</main>
+</div>
+
+<footer>
+© 2026 R-ARYAN | Premium Music Experience 🎵
+</footer>
+
+</div>
+
+<script>
+
+// REGISTRATION
+
+document.getElementById("registerForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+    if (!name || !email) {
+        alert("Please enter your details.");
+        return;
+    }
+
+    document.getElementById("profileName").textContent = name;
+    document.getElementById("profileEmail").textContent = email;
+
+    // Hide registration and open website
+
+    document.getElementById("registerPage").style.display = "none";
+    document.getElementById("website").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+    alert("Welcome to R-ARYAN Music Family! 🎵");
+
+});
+
+// MUSIC LIBRARY
+
+let songs = [];
+let currentFilter = "All";
+
+const songList = document.getElementById("songList");
+const search = document.getElementById("search");
+
+// UPLOAD SONGS
+
+function uploadSongs() {
+
+    const files = document.getElementById("songFile").files;
+    const language = document.getElementById("songLanguage").value;
+
+    if (files.length === 0) {
+        alert("Please select your songs first!");
+        return;
+    }
+
+    Array.from(files).forEach(file => {
+
+        if (!file.type.startsWith("audio/")) return;
+
+        songs.push({
+            name: file.name.replace(/\.[^.]+$/, ""),
+            language: language,
+            url: URL.createObjectURL(file)
+        });
+
+    });
+
+    displaySongs();
+
+    document.getElementById("songFile").value = "";
+
+    alert("Songs added successfully! 🎵");
+}
+
+// DISPLAY SONGS
+
+function displaySongs() {
+
+    songList.innerHTML = "";
+
+    const keyword = search.value.toLowerCase().trim();
+
+    const filteredSongs = songs.filter(song => {
+
+        const matchesLanguage =
+            currentFilter === "All" ||
+            song.language === currentFilter;
+
+        const matchesSearch =
+            song.name.toLowerCase().includes(keyword);
+
+        return matchesLanguage && matchesSearch;
+
+    });
+
+    if (filteredSongs.length === 0) {
+
+        songList.innerHTML =
+        '<p class="empty">No songs found. Add songs to your library!</p>';
+
+        return;
+    }
+
+    filteredSongs.forEach(song => {
+
+        const card = document.createElement("div");
+        card.className = "song-card";
+
+        const cover = document.createElement("div");
+        cover.className = "song-cover";
+        cover.textContent = "🎵";
+
+        const title = document.createElement("h3");
+        title.textContent = song.name;
+
+        const language = document.createElement("p");
+        language.textContent = song.language + " Music";
+
+        const player = document.createElement("audio");
+        player.controls = true;
+        player.preload = "metadata";
+        player.src = song.url;
+
+        card.append(cover, title, language, player);
+        songList.appendChild(card);
+
+    });
+
+}
+
+// CATEGORY FILTER
+
+document.querySelectorAll("[data-filter]").forEach(button => {
+
+    button.addEventListener("click", function() {
+
+        currentFilter = this.dataset.filter;
+
+        document.querySelectorAll("[data-filter]")
+        .forEach(btn => btn.classList.remove("active"));
+
+        this.classList.add("active");
+
+        displaySongs();
+
+    });
+
+});
+
+// SEARCH
+
+search.addEventListener("input", displaySongs);
+
+</script>
+
+</body>
+</html>
